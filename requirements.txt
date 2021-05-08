@@ -1,0 +1,8 @@
+numpy
+opencv-python
+napari==0.4.8-rc1
+scikit-image
+pyqt5
+napari-webcam
+scipy
+
