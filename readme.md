@@ -8,7 +8,9 @@ pip install -r requirements
 * Introduction to napari
 * Key bindings
 * Multi-threading
-* 
+* On-the-fly processing
+* Dock widgets
+* Interactive measurements
 
 
 ## See also
