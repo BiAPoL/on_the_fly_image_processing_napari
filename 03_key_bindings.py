@@ -1,18 +1,16 @@
 import napari
-import time
-from napari._qt.qthreading import thread_worker
 
 # create a viewer window
 viewer = napari.Viewer()
-viewer.grid
 
+# bind short cuts to functions
 @viewer.bind_key("w")
 def up(event):
     print("UP")
 
-@viewer.bind_key("a")
 def left(event):
     print("LEFT")
+viewer.bind_key("a", left)
 
 @viewer.bind_key("s")
 def down(event):

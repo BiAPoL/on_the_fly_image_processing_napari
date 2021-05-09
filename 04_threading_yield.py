@@ -16,7 +16,8 @@ def loop_run():
 
 def update_layer(image):
     """
-    Updates the image in the layer 'result' or adds this layer.
+    Updates the image in the layer 'result'
+    or adds this layer.
     """
     try:
         viewer.layers['result'].data = image
