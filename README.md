@@ -1,7 +1,11 @@
+# On the fly image processing with napari
+
+## Installation instructions
+
 ```
 git clone https://github.com/BiAPoL/on_the_fly_image_processing_napari.git
 cd on_the_fly_image_processing_napari
-pip install -r requirements
+pip install -r requirements.txt
 ```
 
 ## Demos
