@@ -1,8 +1,9 @@
 import napari
 import time
+
 from napari._qt.qthreading import thread_worker
 from cv2.cv2 import VideoCapture
-from napari.layers import Labels
+from napari.layers import Points
 from skimage.color import rgb2gray
 import numpy as np
 from skimage import draw
@@ -30,16 +31,13 @@ def update_layers(images_data : dict):
         image = images_data[name]
         for layer in viewer.layers:
             if layer.name == name:
-                if isinstance(layer, Labels):
-                    layer.data = image.astype(int)
-                else:
-                    layer.data = image
+                layer.data = image
                 image = None
                 break
 
         if image is not None:
-            if 'labels' in name:
-                viewer.add_labels(image.astype(int), name=name)
+            if "point" in name:
+                viewer.add_points(image, name=name, face_color='red')
             else:
                 viewer.add_image(image, name=name)
 
@@ -47,17 +45,15 @@ def process_image(image):
 
     # estimate maximum position
     from scipy.ndimage import center_of_mass
-    y, x = center_of_mass(np.power(image, 100))
+    y, x = center_of_mass(np.power(image, 10000))
 
-    # draw a circle around maximum
-    rr, cc = draw.circle_perimeter(int(y), int(x), radius=10, shape=image.shape)
-    circle_image = np.zeros(image.shape)
-    circle_image[rr, cc] = 1
+    # put a point around maximum
+    points = np.asarray([[y, x]])
 
     # send dictionary of images back to napari
     return {
         "original" : image,
-        "circle_labels" : circle_image
+        "brightest point" : points
     }
 
 # create a viewer window
@@ -69,18 +65,17 @@ camera = VideoCapture(camera_index)
 # https://napari.org/guides/stable/threading.html
 @thread_worker
 def loop_run():
-    while viewer.window.qt_viewer:  # loop until napari closes
+    while True: # endless loop
         image = acquire_image(camera)
         yield process_image(image)
         time.sleep(0.5)
 
-    # stop acquisition
-    camera.release()
-
 # Start the loop
 worker = loop_run()
 worker.yielded.connect(update_layers)
+worker.aborted.connect(camera.release)
 worker.start()
 
 # Start napari
 napari.run()
+
