@@ -1,6 +1,6 @@
 numpy
 opencv-python
-napari==0.4.8-rc1
+napari==0.4.8-rc3
 scikit-image
 pyqt5
 napari-webcam
