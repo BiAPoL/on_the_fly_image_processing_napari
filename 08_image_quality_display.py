@@ -47,7 +47,7 @@ class ImageQualityPanel(QWidget):
         # https://napari.org/guides/stable/threading.html
         @thread_worker
         def loop_run():
-            while viewer.window.qt_viewer:  # loop until napari closes
+            while True: # endless loop
                 # get currently active layer
                 selected_layers = self._viewer.layers.selection
                 if len(selected_layers) > 0:
@@ -56,6 +56,7 @@ class ImageQualityPanel(QWidget):
                     self._update_quality(quality)
 
                 time.sleep(0.1)
+                yield
 
         # Start the loop
         worker = loop_run()
