@@ -6,7 +6,7 @@ The slides are online available as well (soon).
 
 The code examples are provided under the [unlicence](https://unlicense.org) which means you can freely reuse that code.
 
-Big thanks goes to the [napari](https://napari.dev) commnunity for their excellent online tutorial and active support.
+Big thanks goes to the [napari](https://napari.dev) commnunity for their excellent online tutorials and active support.
 
 ## Installation instructions
 
