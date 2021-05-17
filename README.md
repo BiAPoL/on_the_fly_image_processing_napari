@@ -26,7 +26,8 @@ pip install -r requirements.txt
 * [Dock widgets](https://github.com/BiAPoL/on_the_fly_image_processing_napari/blob/master/06_dock_widgets.py)
 * [Interactive measurements](https://github.com/BiAPoL/on_the_fly_image_processing_napari/blob/master/07_image_quality_display.py)
 * [napari plugin example](https://github.com/haesleinhuepf/napari-image-quality-analyzer)
-* [clEsperanto]()
+* [clEsperanto](http://nbviewer.jupyter.org/github/BiAPoL/on_the_fly_image_processing_napari/blob/master/09_clesperanto.ipynb)
+  * [Benchmarking: Affine transforms in scipy, clEsperanto and cupy](https://github.com/clEsperanto/pyclesperanto_prototype/blob/master/benchmarks/affine_transforms.ipynb)
 
 ![](images/image_quality_napari.gif)
 
