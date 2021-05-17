@@ -1,6 +1,6 @@
 # On the fly image processing with napari
-This repository contains code examples and data for the "On-the-fly image processing session with Python and napari" session by Robert Haase form the [Bio-image Analysis Technology development group of the DFG Cluster of Excellence "Physics of Life", TU Dresden](https://physics-of-life.tu-dresden.de/bia) of the 
-Smary Microscopy Workshop at the [Center for Cellular imaging at the University of Gothenbourg](https://www.gu.se/en/core-facilities/centre-for-cellular-imaging) in May 2021.
+This repository contains code examples and data for the "On-the-fly image processing session with Python and napari" session by [Robert Haase](https://physics-of-life.tu-dresden.de/bia) of the 
+Smart Microscopy Workshop at the [Center for Cellular imaging at the University of Gothenbourg](https://www.gu.se/en/core-facilities/centre-for-cellular-imaging) in May 2021.
 
 The slides are online available as well (soon).
 
